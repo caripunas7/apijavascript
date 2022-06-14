@@ -12,7 +12,7 @@ async function carregarDados(){
 
         for(elementos of dados.results){
             //console.log(` Oi, sou ${elementos.name} e nasci no ano ${elementos.birth_year}`)
-            console.log(elementos)
+            //console.log(elementos)
 
             //Criando elementos HTML dinamicamente
             /*
@@ -64,7 +64,36 @@ async function filtrarDados(idPersonagem){
     try {
         let resultado = await fetch(url)
             const dados = await resultado.json()
-            console.log(dados)
+            console.log(resultado)
+
+
+            // Criando Elementos HTML
+            const linha = document.createElement("tr")
+            const tdNome = document.createElement("td")
+            const tdPeso = document.createElement("td")
+            const tdcorOlho = document.createElement("td")
+
+            //CRIANDO O CONTEÚDO DAS TDS(COLUNAS)
+
+            tdNome.textContent = dados.name
+            tdPeso.textContent = dados.mass
+            tdcorOlho.textContent = dados.eye_color
+
+            while(resultado.status != 200){
+                btnFiltrar.setAttribute("disabled", "disabled")
+                btnFiltrar.textContent = "Loading..."
+            }
+            btnFiltrar.removeAttribute("disabled")
+            btnFiltrar.textContent = "Filtrar"
+
+            // Adicionando os Elementos em Suas respectivas tags mãe/pai
+            linha.appendChild(tdNome)
+            linha.appendChild(tdPeso)
+            linha.appendChild(tdcorOlho)
+
+
+
+            tabela.appendChild(linha)
     } catch (error) {
         console.log("o erro está errado é o seguinte: ", error)
         
@@ -76,7 +105,7 @@ async function filtrarDados(idPersonagem){
 btnFiltrar.addEventListener('click',(evento)=>{
     evento.preventDefault()
     if(campoBusca.value !="" && campoBusca.value >=1 && campoBusca.value <= 82){
-        filtrarDados(campoBusca.value)
+        filtrarDados(campoBusca.value) 
 
     }
     else{
@@ -84,3 +113,4 @@ btnFiltrar.addEventListener('click',(evento)=>{
     }
 
 })
+
