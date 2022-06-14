@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <title>Interação com API utilizando AXIOS</title>
+</head>
+<body>
+    <section class="container-fluid col-md-10 mx-auto">
+        <h1 class=" text-center mt-4">Listando personagens de Star Wars</h1>
+        <h2 class="text-center mt-4"></h2>
+        <ul class="list-group" id="lista">
+            
+        </ul>
+
+        <section class="row">
+          <form action="" class="container-fluid col-md-10 mx-auto">
+            <label for="campo" class="col-form-label-lg">Informe o código do personagem Star Wars</label>
+            <input type="search" id="campo" class="form-control">
+            <button class="btn btn-primary mt-2" id="filtrar">Filtrar</button>
+          </form>
+
+        </section>
+        <table class="table">
+            <thead>
+              <tr>
+                
+                <th scope="col">Nome</th>
+                <th scope="col">Peso</th>
+                <th scope="col">Cor dos Olhos</th>
+              </tr>
+            </thead>
+            <tbody id="tabela">
+              <!-- tr, em table no bootstrap, correponde a uma linha de tabela -->
+                <tr>    
+                
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              
+            
+            </tbody>
+          </table>
+
+    </section>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
