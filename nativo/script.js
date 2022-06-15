@@ -42,8 +42,14 @@ async function carregarDados(){
             linha.appendChild(tdPeso)
             linha.appendChild(tdcorOlho)
 
+            // Se houver 
+            
+            
+            
             tabela.appendChild(linha)
             
+
+
 
         }
 
